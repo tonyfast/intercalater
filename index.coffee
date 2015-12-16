@@ -14,9 +14,9 @@ Table::inView = (plot)->
     @selection.selectAll 'tr.values'
         .each (d)->
             if x.get('_end') > d[xx] > x.get('_start') and y.get('_end') > d[yy] > y.get('_start')
-                d3.select(@).classed 'in', yes
+                d3.select(@).classed 'out', no
             else
-                d3.select(@).classed 'in', no
+                d3.select(@).classed 'out', yes
     @build()
 
 table = manager.attach d3.selectAll('.vs').html(''),Table,'table'
