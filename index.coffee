@@ -35,8 +35,8 @@ plot.load {{site.data.scatter|jsonify}}
 ## Shuffle the data ##
 d3.selectAll('#shuffle').on 'click', ()=>
     manager.DataSource.shuffle()
-    table.inView plot
     plot.updateSelected()
+    table.inView plot
 table.cursor.select 'max_rows'
     .on 'update', ()->
         scroller.updateSize()
@@ -51,9 +51,8 @@ manager.DataSource.tree.select('data').on 'update', ()->
 manager.DataSource.tree.select('table','iloc').on 'update', ()-> table.build()
 
 scroller.render = ()->
-  table.inView plot
   plot.updateSelected()
-
+  table.inView plot
 ##Fix the table width ##
 table.selection.select('table')
     .style 'width', '900px'
