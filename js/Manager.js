@@ -308,7 +308,7 @@
     extend(Table, superClass);
 
     Table.prototype.config = {
-      max_rows: 10,
+      max_rows: 20,
       iloc: 0,
       show_id: true,
       index: Baobab.monkey(['.', 'max_rows'], ['.', 'iloc'], ['index'], function(rows, iloc, index) {
