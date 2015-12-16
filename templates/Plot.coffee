@@ -5,11 +5,11 @@ class Plot extends Selection
             updated = {}
             columns.forEach (k)=> updated[k] = cds[k]['data']
             updated
-    constructor: (selection,name,tree,@config)->
-        super selection, name, tree, @config
+    constructor: (selection,name,tree,config)->
+        super selection, name, tree, config
+        @from_ref = from_ref
 
     load: (p)->
-        debugger
         plot = p['payload'].filter (d)-> d.type in ['Plot']
         Bokeh.load_models  p['payload']
         @figure = from_ref plot[0]

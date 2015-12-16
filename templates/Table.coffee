@@ -8,7 +8,7 @@ class Table extends Selection
                 .map (iloc)=> index[iloc]
         columns:
             index: ['index','species']
-            exclude: ['sepal_length']
+            exclude: []
             order: Baobab.monkey ['.','index'],['.','exclude'],['columns'], (index,exclude,columns)->
                 [
                     index
@@ -22,7 +22,6 @@ class Table extends Selection
                 d3.zip v...
     constructor: (selection,name,tree)->
         super selection, name, tree, @config
-        @tree.set ['table'],@config
         @build()
     build: ->
         table_cursor = @tree.select 'table'
