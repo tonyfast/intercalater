@@ -35,6 +35,7 @@ plot.load {{site.data.scatter|jsonify}}
 ## Shuffle the data ##
 d3.selectAll('#shuffle').on 'click', ()=>
     manager.DataSource.shuffle()
+    table.inView plot
     plot.updateSelected()
 table.cursor.select 'max_rows'
     .on 'update', ()->
