@@ -1,6 +1,6 @@
 class Table extends Selection
     config:
-        max_rows: 10
+        max_rows: 20
         iloc: 0
         show_id: yes
         index: Baobab.monkey ['.','max_rows'],['.','iloc'],['index'], (rows, iloc, index)->
