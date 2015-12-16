@@ -1,0 +1,26 @@
+---
+src:
+  - /bower_components/d3/d3.min.js
+  - /bower_components/baobab/build/baobab.min.js
+  - /assets/Manager.js
+  - /assets/Bokeh.js
+---
+
+<!doctype html>
+<html>
+<head>
+  {% for src in page.src %}
+  <script src="{{site.baseurl}}{{src}}"></script>
+  {% endfor %}
+  <!--script src="http://cdn.pydata.org/bokeh/release/bokeh-0.10.0.min.js"></script-->
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/js/Bokeh.css"/>
+</head>
+<body>
+  <div class="vs"></div>
+  <ul class='buttons'>
+    <li><a id="shuffle">shuffle</a></li>
+  </ul>
+  <div id="scatter"></div>
+  <script src="index.js"></script>
+</body>
+</html>
